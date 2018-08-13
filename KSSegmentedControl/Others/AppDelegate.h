@@ -10,6 +10,7 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+#pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 @property (strong, nonatomic, readonly) UIWindow *window;
 
 

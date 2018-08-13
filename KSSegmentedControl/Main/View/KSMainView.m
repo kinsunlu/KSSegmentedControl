@@ -32,7 +32,7 @@
     CGRect bounds = self.bounds;
     UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:bounds];
     scrollView.pagingEnabled = YES;
-    scrollView.showsVerticalScrollIndicator = NO;
+    scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.contentSize = (CGSize){bounds.size.width*count, 0.f};
     [self addSubview:scrollView];
     _scrollView = scrollView;

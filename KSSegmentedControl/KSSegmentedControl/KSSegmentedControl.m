@@ -173,9 +173,11 @@
     if (_didClickItem) {
         UITouch *touch = touches.anyObject;
         CGPoint location = [touch locationInView:self];
-        NSInteger page = location.x/(self.frame.size.width/_items.count);
-        _selectedSegmentIndex = page;
-        _didClickItem(page);
+        if (CGRectContainsPoint(self.bounds, location)) {
+            NSInteger page = location.x/(self.frame.size.width/_items.count);
+            _selectedSegmentIndex = page;
+            _didClickItem(page);
+        }
     }
 }
 

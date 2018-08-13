@@ -95,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				6D8EDAA1211D31D70092C55B /* Controller */,
-				6D8EDAA2211D31D70092C55B /* Model */,
 				6D8EDAA3211D31D70092C55B /* View */,
 			);
 			path = Main;
@@ -108,13 +107,6 @@
 				6D8EDAA5211D31EC0092C55B /* KSMainViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		6D8EDAA2211D31D70092C55B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		6D8EDAA3211D31D70092C55B /* View */ = {

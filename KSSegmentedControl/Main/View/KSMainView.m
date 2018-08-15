@@ -8,15 +8,11 @@
 
 #import "KSMainView.h"
 
-@interface KSMainView () {
+@implementation KSMainView {
     __weak UIView *_topBar;
     __weak UIView *_line;
     NSArray <UILabel*>*_labels;
 }
-
-@end
-
-@implementation KSMainView
 
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {

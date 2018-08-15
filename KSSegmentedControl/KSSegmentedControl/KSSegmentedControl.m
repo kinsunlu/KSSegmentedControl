@@ -80,9 +80,10 @@
 
 -(void)layoutSublayersOfLayer:(CALayer *)layer {
     _highlightLayer.frame = layer.bounds;
+    CGSize size = layer.bounds.size;
     NSUInteger count = _items.count;
     k_creatFrameElement;
-    viewX=0.f;viewH=self.font.lineHeight;viewY=(layer.frame.size.height-viewH)*0.5f;viewW=layer.frame.size.width/count;
+    viewX=0.f;viewH=self.font.lineHeight;viewY=(size.height-viewH)*0.5f;viewW=size.width/count;
     for (NSUInteger i=0; i<count; i++) {
         KSSegmentedItemLayer *normalTextLayer = [_normalTextLayerArray objectAtIndex:i];
         KSSegmentedItemLayer *highlightTextLayer = [_highlightTextLayerArray objectAtIndex:i];
@@ -91,8 +92,8 @@
         highlightTextLayer.frame = rect;
         viewX=CGRectGetMaxX(rect);
     }
-    CGSize size = layer.bounds.size;
-    CGFloat width = viewW, height = size.height, radius = _cornerRadius;
+    
+    CGFloat width=viewW, height = size.height, radius = _cornerRadius;
     
     UIBezierPath *path = [UIBezierPath bezierPath];
     [path addArcWithCenter:(CGPoint){radius, radius} radius:radius startAngle:M_PI endAngle:-M_PI_2 clockwise:YES];

@@ -22,6 +22,7 @@
     [super loadView];
     KSMainView *view = [[KSMainView alloc]initWithFrame:self.view.frame];
     view.scrollView.delegate = self;
+    view.segmented.selectedSegmentIndex = 2;
     self.view = view;
 }
 

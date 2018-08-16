@@ -16,7 +16,7 @@
 @property (nonatomic, strong) UIColor *highlightTextColor;
 @property (nonatomic, assign) CGFloat cornerRadius;
 @property (nonatomic, assign) NSInteger selectedSegmentIndex;
-@property (nonatomic, copy) void (^didClickItem)(NSInteger index);
+@property (nonatomic, copy) void (^didClickItem)(NSInteger index, BOOL isAnimation);
 
 -(instancetype)initWithFrame:(CGRect)frame items:(NSArray<NSString*>*)items;
 -(void)scrollViewDidScroll:(UIScrollView*)scrollView;

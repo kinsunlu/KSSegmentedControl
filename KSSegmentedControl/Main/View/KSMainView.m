@@ -61,9 +61,9 @@
     segmented.normalTextColor = color;
     segmented.cornerRadius = 6.f;
     __weak typeof(self) weakSelf = self;
-    [segmented setDidClickItem:^(NSInteger index) {
+    [segmented setDidClickItem:^(NSInteger index, BOOL isAnimation) {
         UIScrollView *k_scrollView = weakSelf.scrollView;
-        [k_scrollView setContentOffset:(CGPoint){k_scrollView.frame.size.width*index,0.f} animated:YES];
+        [k_scrollView setContentOffset:(CGPoint){k_scrollView.frame.size.width*index,0.f} animated:isAnimation];
     }];
     [topBar addSubview:segmented];
     _segmented = segmented;

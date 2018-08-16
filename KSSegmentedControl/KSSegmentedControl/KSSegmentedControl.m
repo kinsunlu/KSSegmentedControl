@@ -102,6 +102,10 @@
     [path addArcWithCenter:(CGPoint){radius, height-radius} radius:radius startAngle:M_PI_2 endAngle:M_PI clockwise:YES];
     [path closePath];
     _maskLayer.path = path.CGPath;
+    
+    if (_didClickItem && _selectedSegmentIndex != 0) {
+        _didClickItem(_selectedSegmentIndex, NO);
+    }
 }
 
 -(void)scrollViewDidScroll:(UIScrollView*)scrollView {
@@ -177,7 +181,7 @@
         if (CGRectContainsPoint(self.bounds, location)) {
             NSInteger page = location.x/(self.frame.size.width/_items.count);
             _selectedSegmentIndex = page;
-            _didClickItem(page);
+            _didClickItem(page, YES);
         }
     }
 }
